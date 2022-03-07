@@ -12,7 +12,7 @@ class Spot(models.Model):
     level = models.CharField(max_length=30, default=None)
     owner = models.ForeignKey(
         "jwt_auth.User",
-        related_name="reviews",
+        related_name="spots",
         on_delete = models.CASCADE
     )
 
