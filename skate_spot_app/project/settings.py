@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'jwt_auth',
     'spots',
-    'likes'
+    'likes',
+    'comments'
 ]
 
 MIDDLEWARE = [
