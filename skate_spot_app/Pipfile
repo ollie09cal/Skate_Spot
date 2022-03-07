@@ -6,10 +6,11 @@ name = "pypi"
 [packages]
 django = "*"
 pylint = "*"
-psycopg2-binary = "*"
+psycopg2 = "*"
 autopep8 = "*"
 djangorestframework = "*"
 pyjwt = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
