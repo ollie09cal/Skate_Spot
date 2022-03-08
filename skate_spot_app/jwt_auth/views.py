@@ -44,3 +44,4 @@ class LoginView(APIView):
             'token': token,
             'message': f"Welcome back {user_to_login.first_name}"
         }, status.HTTP_202_ACCEPTED)
+

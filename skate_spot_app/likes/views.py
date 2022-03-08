@@ -13,7 +13,7 @@ from .models import Like
 # Create your views here.
 
 class LikeListView(APIView):
-    permission_classes = (IsAuthenticatedOrReadOnly)
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def post(self, request):
         request.data["owner"] = request.user.id
@@ -29,7 +29,7 @@ class LikeListView(APIView):
             }, status=status.HTTP_400_BAD_REQUEST)
 
 class DetailLikeView(APIView):
-    permission_classes = (IsAuthenticatedOrReadOnly)
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def delete(self, request, pk):
         try:

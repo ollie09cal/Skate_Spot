@@ -5,7 +5,7 @@ class Like(models.Model):
     like = models.BooleanField(default=False)
     spot = models.ForeignKey(
         "spots.Spot",
-        realted_name = 'likes',
+        related_name = 'likes',
         on_delete = models.CASCADE
     )
     owner = models.ForeignKey(

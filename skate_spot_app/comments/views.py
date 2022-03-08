@@ -13,7 +13,7 @@ from .models import Comment
 # Create your views here.
 
 class CommentListView(APIView):
-    permission_classes = (IsAuthenticatedOrReadOnly)
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def post(self, request):
         request.data["owner"] = request.user.id
@@ -34,7 +34,7 @@ class CommentListView(APIView):
             }, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 class CommentDetailView(APIView):
-    permission_classes = (IsAuthenticatedOrReadOnly)
+    permission_classes = (IsAuthenticatedOrReadOnly, )
     def delete(self, request, pk):
         try:
             comment_to_delete = Comment.objects.get(pk=pk)
