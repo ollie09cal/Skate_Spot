@@ -36,7 +36,10 @@ function Homepage() {
                 paddingTop='20'
             >Skate Spot.</Heading>
             <Center>
-                <Button mt={3} onClick={onOpen}>Info</Button>
+                <Button
+                    bgGradient='linear(to-l, #7928CA, #7DF9FF)'
+                    mt={3} 
+                    onClick={onOpen}>Info</Button>
             </Center>
             
             <Modal isOpen={isOpen} onClose={onClose}>

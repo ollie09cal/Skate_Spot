@@ -13,7 +13,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 # Create your views here.
 class SpotListView(APIView):
-    # permission_classes = (IsAuthenticatedOrReadOnly, )
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def get(self, request):
         print("trying request")

@@ -6,6 +6,9 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Homepage from './components/Homepage'
 import SignUp from './components/auth/SignUp'
 import Login from './components/auth/Login'
+import Profile from './components/Profile'
+import Map from './components/Map'
+import AddSpot from './components/AddSpot'
 
 function App() {
   // useEffect(() => {
@@ -23,6 +26,9 @@ function App() {
           <Route path='/' element={<Homepage />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/map' element={<Map />} />
+          <Route path='/addspot' element={<AddSpot />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
