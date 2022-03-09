@@ -4,6 +4,9 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 //PAGES:
 import Homepage from './components/Homepage'
+import SignUp from './components/auth/SignUp'
+import Login from './components/auth/Login'
+
 function App() {
   // useEffect(() => {
   //   const getData = async () => {
@@ -18,6 +21,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Homepage />} />
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
