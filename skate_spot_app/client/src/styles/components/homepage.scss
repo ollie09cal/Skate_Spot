@@ -1,7 +1,9 @@
+$body-font: 'Nova Cut', cursive;
+
 .homepage-div {
     min-height: 100vh;
     min-width: 100vw;
-    background-color: $background;
+    background-color: #000411;
     background-image: url('./../../../materials/lightning.gif');
     background-size: cover;
     .button-div {

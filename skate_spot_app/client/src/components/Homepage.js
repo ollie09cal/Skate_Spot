@@ -10,8 +10,7 @@ import {
     ModalFooter,
     ModalBody,
     ModalCloseButton,
-    useDisclosure,
-    requiredChakraThemeKeys
+    useDisclosure
 } from '@chakra-ui/react'
 import coach_frank from './../materials/coach_frank.png'
 

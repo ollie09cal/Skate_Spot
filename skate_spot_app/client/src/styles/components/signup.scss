@@ -1,0 +1,14 @@
+.signup-div {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #000411;
+    form {
+        color: #ffffff;
+        .form-element {
+            margin-top: 15px;
+        }
+        Button {
+            color: #000411;
+        }
+    }
+}
