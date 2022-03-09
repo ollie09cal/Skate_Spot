@@ -1,16 +1,27 @@
-import React, { useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
+import { BrowserRouter, Routes, Route, } from 'react-router-dom'
+import { ChakraProvider } from '@chakra-ui/react'
 
+//PAGES:
+import Homepage from './components/Homepage'
 function App() {
-  useEffect(() => {
-    const getData = async () => {
-      const { data } = await axios.get('api/spots/') // * <-- replace with your endpoint
-      console.log(data)
-    }
-    getData()
-  })
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const { data } = await axios.get('api/spots/') // * <-- replace with your endpoint
+  //     console.log(data)
+  //   }
+  //   getData()
+  // })
 
-  return <h1>Hello World</h1>
+  return (
+    <ChakraProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+        </Routes>
+      </BrowserRouter>
+    </ChakraProvider>
+  )
 }
 
 export default App

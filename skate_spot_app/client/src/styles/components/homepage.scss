@@ -1,0 +1,16 @@
+.homepage-div {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: $background;
+    background-image: url('./../../../materials/lightning.gif');
+    background-size: cover;
+    .button-div {
+        display: flex;
+        font-family: $body-font;
+        justify-content: center;
+        Button {
+            margin: 10%;
+            width: 100px;
+        }
+    }
+}

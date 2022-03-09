@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Nova+Cut&display=swap');
+$body-font: 'Nova Cut', cursive;
+//font-family: 'Limelight', cursive;
+$background: #000411;
+
+// style imports
+@import './components/homepage.scss';
 * {
   box-sizing: border-box;
 }
