@@ -1,9 +1,14 @@
-
+import React from "react"
+import NavigationBar from './NavigationBar'
 
 function AddSpot() {
 
     return (
-        <h2>Add Spot Page</h2>
+        <>
+            <NavigationBar />
+            <h2>Add Spot Page</h2>
+        </>
+        
     )
 }
 

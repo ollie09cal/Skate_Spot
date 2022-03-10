@@ -10,6 +10,8 @@ import Profile from './components/Profile'
 import Map from './components/Map'
 import AddSpot from './components/AddSpot'
 
+//import NavigationBar from './components/NavigationBar'
+
 function App() {
   // useEffect(() => {
   //   const getData = async () => {

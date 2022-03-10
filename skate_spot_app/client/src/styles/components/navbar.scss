@@ -1,0 +1,27 @@
+$body-font: 'Nova Cut', cursive;
+
+.navbar-container {
+    font-family: $body-font;
+    min-width: 100vw !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    a {
+        color: black;
+        margin-inline: 10px;
+        align-self: auto;
+    }
+    .brand {
+        justify-content: start;
+    }
+    .links-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: baseline;
+        align-items: baseline;
+        Link {
+            margin: 15px;
+            align-items: baseline;
+        }
+    }
+}

@@ -1,9 +1,13 @@
-
+import React from "react"
+import NavigationBar from './NavigationBar'
 
 function Map() {
 
     return (
-        <h2>Map Page</h2>
+        <>
+            <NavigationBar />
+            <h2>Map Page</h2>
+        </>
     )
 }
 

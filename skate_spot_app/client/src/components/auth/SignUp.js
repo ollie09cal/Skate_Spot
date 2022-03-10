@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import React, { useState } from 'react'
 import axios from 'axios'
+import { ImageUploadField } from '../ImageUpload'
 import {
     FormControl,
     FormLabel,
@@ -44,23 +45,36 @@ function SignUp() {
         e.preventDefault()
         try {
             console.log(signUpInfo)
+            const { data } = await axios.post('api/auth/register/', signUpInfo)
+            console.log(data)
             toast({
-                title:'Registered!',
+                title: 'Registered!',
                 description: 'You have sucessfully signed up! Happy Skating and welcome to the community!',
                 status: 'success',
                 duration: 9000,
                 isCloseable: true
             })
-            //navigate('/login')
+            navigate('/login')
         } catch (err) {
+            setFormError({ ...formError, ...err.response.data.errors })
             console.log(err)
+            toast({
+                title: 'Error',
+                description: "Registration failed, please ensure your password is 8 characters or longer and contains at least one number",
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+            })
         }
     }
 
     const handleChange = (e) => {
-        setFormError({ ...formError, [e.target.id]: ''})
+        setFormError({ ...formError, [e.target.id]: '' })
         const newObj = { ...signUpInfo, [e.target.id]: e.target.value }
         setSignUpInfo(newObj)
+    }
+    const handleImageUrl = url => {
+        setSignUpInfo({ ...signUpInfo, profile_image: url })
     }
 
     return (
@@ -139,6 +153,15 @@ function SignUp() {
                         </FormControl>
 
                         {/* <ImageUpload value={signUpInfo.profile_image} name="profileImage" handleImageURL={handleImageURL} /> */}
+                        <FormControl className="form-element" isRequired IsInvalid={formError.profile_image}>
+                            <FormLabel htmlFor='profile_image'>Upload your knarliest profile photo!</FormLabel>
+                            <ImageUploadField
+                                value={signUpInfo.profile_image}
+                                name="profile_image"
+                                handleImageUrl={handleImageUrl}
+                            />
+                        </FormControl>
+
 
                         <Center><Button
                             className="form-element"

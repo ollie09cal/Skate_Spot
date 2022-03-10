@@ -7,6 +7,9 @@ from .serializers.common import UserSerializer
 from datetime import datetime, timedelta 
 import jwt
 from django.conf import settings
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from .models import User
+# from .serializers.populated import PopulatedProfileSerializer
 
 User = get_user_model()
 
@@ -45,3 +48,10 @@ class LoginView(APIView):
             'message': f"Welcome back {user_to_login.first_name}"
         }, status.HTTP_202_ACCEPTED)
 
+class ViewProfile(APIView):
+    
+
+    def get(self, request):
+        print('this is the self log ---->', self)
+        print('user details---->', UserSerializer(User.objects.get(request.user)))
+        

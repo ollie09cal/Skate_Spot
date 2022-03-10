@@ -19,9 +19,9 @@ function Login() {
     const navigate = useNavigate()
     const toast = useToast()
 
-    const setTokenFromLocal = (token) => {
-        window.localStorage.setItem('user-token', token)
-    }
+    // const setTokenFromLocal = (token) => {
+    //     localStorage.setItem('user-token', token)
+    // }
 
     //STATES
     const [loginInfo, setLoginInfo] = useState({
@@ -36,10 +36,11 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const { data } = await axios.post('api/login/')
-            setTokenFromLocal(data.token)
-            //navigate to profile
-            //console.log(loginInfo)
+            const { data } = await axios.post('/api/auth/login/', loginInfo)
+            // window.localStorage.setItem('user-token', data.token)
+            navigate('/profile')
+            console.log(localStorage.length)
+            console.log('Login successful ---->', loginInfo, ' data from request --->', data)
         } catch (err) {
             setIsError({ error: true, message: 'Email and password does not match.' })
             toast({
