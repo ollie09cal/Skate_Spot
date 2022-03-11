@@ -9,6 +9,7 @@ import Login from './components/auth/Login'
 import Profile from './components/Profile'
 import Map from './components/Map'
 import AddSpot from './components/AddSpot'
+import Viewspot from './components/Viewspot'
 
 //import NavigationBar from './components/NavigationBar'
 
@@ -31,6 +32,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/map' element={<Map />} />
           <Route path='/addspot' element={<AddSpot />} />
+          <Route path='/viewspot' element={<Viewspot />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>

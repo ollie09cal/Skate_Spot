@@ -6,6 +6,11 @@
 @import './components/signup.scss';
 @import './components/login.scss';
 @import './components/navbar.scss';
+@import './components/viewspot.scss';
+@import './components/profilepage.scss';
+@import './components/addspot.scss';
+
+@import 'mapbox-gl/dist/mapbox-gl.css';
 
 //VARIABLES
 $body-font: 'Nova Cut', cursive;

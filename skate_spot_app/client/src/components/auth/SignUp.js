@@ -90,7 +90,7 @@ function SignUp() {
             >Sign Up.</Heading>
 
             <Center>
-                <Box mt={3} minWidth='350px'>
+                <Box mt={3} minWidth='350px' maxWidth='600px'>
                     <form onSubmit={handleSubmit}>
                         <FormControl className="form-element" isRequired IsInvalid={formError.email}>
                             <FormLabel htmlFor='email'>Email</FormLabel>
@@ -152,7 +152,6 @@ function SignUp() {
                             {formError.password_confirmation && <FormErrorMessage>Passwords do not match!</FormErrorMessage>}
                         </FormControl>
 
-                        {/* <ImageUpload value={signUpInfo.profile_image} name="profileImage" handleImageURL={handleImageURL} /> */}
                         <FormControl className="form-element" isRequired IsInvalid={formError.profile_image}>
                             <FormLabel htmlFor='profile_image'>Upload your knarliest profile photo!</FormLabel>
                             <ImageUploadField

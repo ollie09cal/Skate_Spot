@@ -9,7 +9,7 @@ import jwt
 from django.conf import settings
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import User
-# from .serializers.populated import PopulatedProfileSerializer
+from .serializers.populated import PopulatedUserSerializer
 
 User = get_user_model()
 
@@ -53,5 +53,7 @@ class ViewProfile(APIView):
 
     def get(self, request):
         print('this is the self log ---->', self)
-        print('user details---->', UserSerializer(User.objects.get(request.user)))
+        user = User.objects.get(username=request.user)
+        serialized_user = PopulatedUserSerializer(user)
+        return Response(serialized_user.data, status=status.HTTP_200_OK)
         

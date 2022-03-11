@@ -1,0 +1,11 @@
+$body-font: 'Nova Cut', cursive;
+.viewspot-div {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #000411;
+    font-family:  $body-font !important;
+    .css-84zodg {
+        display: flex;
+        justify-content: space-between;
+    }
+}

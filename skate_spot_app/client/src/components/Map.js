@@ -6,7 +6,7 @@ function Map() {
     return (
         <>
             <NavigationBar />
-            <h2>Map Page</h2>
+            
         </>
     )
 }

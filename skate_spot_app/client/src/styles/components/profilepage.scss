@@ -1,0 +1,12 @@
+$body-font: 'Nova Cut', cursive;
+
+.profile-div {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #000411;
+    font-family:  $body-font !important;
+    color: white;
+    .profile-data {
+        padding: 15px;
+    }
+}

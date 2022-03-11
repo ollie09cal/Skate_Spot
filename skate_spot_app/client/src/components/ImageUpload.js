@@ -1,5 +1,6 @@
 import React from "react"
 import axios from 'axios'
+import { Image, Center } from '@chakra-ui/react'
 
 const uploadURL = process.env.REACT_APP_IMAGE_UPLOAD_URL
 const uploadPreset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
@@ -20,16 +21,22 @@ export const ImageUploadField = ({ handleImageUrl, value }) => {
         <>
             {value ?
                 <div>
-                    <img src={value} alt="user upload" />
+                    <Center>
+                        <Image borderRadius={50} maxWidth="30%" src={value} alt="user upload" />
+                    </Center>
                 </div>
                 :
                 <>
-                    <label>Image Upload</label>
-                    <input
-                        className="input"
-                        type="file"
-                        onChange={handleUpload}
-                    />
+                    <Center>
+                        <input
+                            className="input"
+                            id="file-input"
+                            type="file"
+                            onChange={handleUpload}
+                            class="hidden"
+                        />
+                        <label class="file-label" for="file-input">📸</label>
+                    </Center>
                 </>
             }
         </>
