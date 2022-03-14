@@ -39,8 +39,13 @@ function Login() {
             const { data } = await axios.post('/api/auth/login/', loginInfo)
             // window.localStorage.setItem('user-token', data.token)
             navigate('/profile')
-            console.log(localStorage.length)
-            console.log('Login successful ---->', loginInfo, ' data from request --->', data)
+            toast({
+                title: 'Logged in!',
+                description: 'Welcome back!',
+                status: 'success',
+                duration: 9000,
+                isCloseable: true
+            })
         } catch (err) {
             setIsError({ error: true, message: 'Email and password does not match.' })
             toast({

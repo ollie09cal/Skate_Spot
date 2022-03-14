@@ -54,7 +54,7 @@ function Homepage() {
                     <ModalCloseButton />
                     <ModalBody>
                         Welcome to the glorious world of skate spots, the web app that allows you to find that spot that you have been itching for!
-                        From sign up you will be be able to search the UK for spots that skaters, much like yourself, have shreaded and uploaded themselves!
+                        From sign up you will be be able to search the UK for spots that skaters (much like yourself) have shreaded and uploaded themselves!
                         I encourage you to also take part in the community by uploading your own spots and leaving reviews at the spots you have skated..<br /><br />
                         <Center>
                             🛹 HAPPY SKATING 🛹

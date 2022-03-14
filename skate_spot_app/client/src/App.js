@@ -32,7 +32,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/map' element={<Map />} />
           <Route path='/addspot' element={<AddSpot />} />
-          <Route path='/viewspot' element={<Viewspot />} />
+          <Route path='/viewspot/:spotid' element={<Viewspot />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>

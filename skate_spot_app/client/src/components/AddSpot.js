@@ -15,7 +15,13 @@ import {
     Heading,
     Textarea,
     VStack,
-    HStack
+    HStack,
+    Select,
+    NumberInput,
+    NumberInputField,
+    NumberInputStepper,
+    NumberIncrementStepper,
+    NumberDecrementStepper
 } from '@chakra-ui/react'
 import { SmallAddIcon } from '@chakra-ui/icons'
 
@@ -85,7 +91,7 @@ function AddSpot() {
                 duration: 9000,
                 isCloseable: true
             })
-            navigate('/login')
+            navigate('/map')
         } catch (err) {
             setFormError({ ...formError, ...err.response.data.errors })
             console.log(err)
@@ -102,9 +108,10 @@ function AddSpot() {
         setFormError({ ...formError, [e.target.id]: '' })
         const newObj = { ...formData, [e.target.id]: e.target.value }
         setFormData(newObj)
+        console.log(formData)
     }
     const handleImageUrl = url => {
-        setFormData({ ...formData, profile_image: url })
+        setFormData({ ...formData, image: url })
     }
 
     return (
@@ -160,13 +167,55 @@ function AddSpot() {
                                 {formError.location && <FormErrorMessage>Invalid location (try chosing somewhere near)</FormErrorMessage>}
                             </FormControl>
 
-                            <FormControl className='form-element' isRequired isInvalid={formError.image}>
+                            {/* <FormControl className='form-element' isRequired>
                                 <FormLabel htmlFor="image">Upload a photo of your spot!</FormLabel>
+                                <ImageUploadField 
+                                    value={formData.image}
+                                    handleImageUrl={handleImageUrl}
+                                />
+                            </FormControl> */}
+
+                            <FormControl mb={3} className="form-element" isRequired IsInvalid={formError.description}>
+                                <FormLabel htmlFor='description'>Description</FormLabel>
+                                <Textarea
+                                    resize='none'
+                                    id='description'
+                                    type='text'
+                                    placeholder='write a short description of the spot (max 255 characters)'
+                                    defaultValue={formData.description}
+                                    onChange={handleChange}
+                                />
+                                {formError.description && <FormErrorMessage>Please ensure you description is below 255 characters.</FormErrorMessage>}
+                            </FormControl>
+
+                            <FormControl mb={3} className="form-element" isRequired IsInvalid={formError.rating}>
+                                <FormLabel htmlFor='rating'>Rate the spot out of 5</FormLabel>
+                                <NumberInput size='md' maxW={16} defaultValue={formData.rating} min={0} max={5} onChange={(valueString) => setFormData({ ...formData, rating: valueString })}>
+                                    <NumberInputField />
+                                    <NumberInputStepper>
+                                        <NumberIncrementStepper />
+                                        <NumberDecrementStepper />
+                                    </NumberInputStepper>
+                                </NumberInput>
+                            </FormControl>
+
+                            <FormControl mb={3} className='form-element' isRequired IsInvalid={formError.level}>
+                                <FormLabel htmlFor='level'>Select a difficulty for your spot</FormLabel>
+                                <Select placeholder='--Select Difficulty--' id='level' onChange={(e) => setFormData({ ...formData, level: e.target.value })}>
+                                    <option value='Novice'>Novice</option>
+                                    <option value='Beginner'>Beginner</option>
+                                    <option value='Intermediate'>Intermediate</option>
+                                    <option value='pro skater 😎'>pro skater 😎</option>
+                                </Select>
+                            </FormControl>
+
+                            <FormControl mb={3} className="form-element" isRequired IsInvalid={formError.image}>
+                                <FormLabel htmlFor="image">Upload an image of your Spot!</FormLabel>
                                 <ImageUploadField
-                                value={formData.image}
-                                name="profile_image"
-                                handleImageUrl={handleImageUrl}
-                            />
+                                    value={formData.image}
+                                    name="image"
+                                    handleImageUrl={handleImageUrl}
+                                />
                             </FormControl>
 
                             <Center><Button

@@ -9,6 +9,7 @@
 @import './components/viewspot.scss';
 @import './components/profilepage.scss';
 @import './components/addspot.scss';
+@import './components/map.scss';
 
 @import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -19,4 +20,7 @@ $background: #000411;
 
 * {
   box-sizing: border-box;
+}
+.electric-blue {
+  color: aqua;
 }

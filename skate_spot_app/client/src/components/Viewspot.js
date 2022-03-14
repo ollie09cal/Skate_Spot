@@ -21,11 +21,12 @@ import {
 
 const Viewspot = () => {
     const [spotData, setSpotData] = useState()
+    const id = useParams()
 
     useEffect(() => {
         const getSpot = async () => {
             try {
-                const { data } = await axios.get('api/spots/1')
+                const { data } = await axios.get(`/api/spots/${id.spotid}`)
                 setSpotData(data)
                 console.log(data)
             } catch (err) {
@@ -42,7 +43,7 @@ const Viewspot = () => {
             {spotData ?
                 <div className="viewspot-div">
                     <Center>
-                        <Box mt={4} borderWidth='5px' width='80%' padding={4} bg='#ffffff' className="spot-div">
+                        <Box mt={4} borderWidth='5px' width='80%' maxWidth='800px' padding={4} bg='#ffffff' className="spot-div">
                             <HStack>
                                 <Box width="40%" mr={5}>
                                     <Text
